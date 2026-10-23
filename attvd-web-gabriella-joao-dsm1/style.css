@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 40px 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, #12061f 0%, #2d1457 45%, #5b2a9e 80%, #8e5bd6 100%);
+    background-attachment: fixed;
+}
+
+.cartao {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 10px 40px rgba(10, 0, 30, 0.45);
+}
+
+h1 {
+    margin-top: 0;
+}
+.palco {
+    position: relative;
+    height: 380px;
+    margin-top: 24px;
+    border-radius: 16px;
+    background: linear-gradient(160deg, #e5a5eb, #8f0ac4);
+    overflow: hidden;
+}
+
+.bolinha {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    margin: -25px 0 0 -25px; 
+    border-radius: 50%;
+    cursor: pointer;
+
+    transition: border-radius 0.5s ease-in-out,
+                background-color 0.5s ease;
+
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+
+.b1 { background-color: #e90909; animation-name: ponta-topo; }
+.b2 { background-color: #00f100; animation-name: ponta-esquerda; }
+.b3 { background-color: #2600ff; animation-name: ponta-direita; }
+
+.bolinha:hover {
+    border-radius: 0;
+}
+.b1:hover { background-color: #00f100; }
+.b2:hover { background-color: #e90909; }
+.b3:hover { background-color: #ff9914; }
+
+@keyframes ponta-topo {
+    0%   { transform: translate(0, 0); }
+    50%  { transform: translate(0, -150px); }
+    100% { transform: translate(0, 0); }
+}
+@keyframes ponta-esquerda {
+    0%   { transform: translate(0, 0); }
+    50%  { transform: translate(-150px, 110px); }
+    100% { transform: translate(0, 0); }
+}
+@keyframes ponta-direita {
+    0%   { transform: translate(0, 0); }
+    50%  { transform: translate(150px, 110px); }
+    100% { transform: translate(0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bolinha { animation: none; }
+}
